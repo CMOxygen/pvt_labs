@@ -19,9 +19,33 @@ namespace lab2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            oleDbSelectCommand1.CommandText = "SELECT Фамилия FROM Личный_состав\r\n"
+                + "WHERE (Фамилия LIKE ? + '%')";
+
+            oleDbSelectCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter());
+            oleDbSelectCommand1.Parameters[0].Value = "В";
+
             oleDbDataAdapter1.Fill(dataSet11);
 
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NewLoad();
+        }
+
+        void NewLoad()
+        {
+            String text = textBox1.Text.Trim();
+            textBox1.Text = text;
+
+            oleDbSelectCommand1.Parameters[0].Value = text;
         }
     }
 }
