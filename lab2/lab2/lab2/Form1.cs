@@ -52,5 +52,32 @@ namespace lab2
 
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                NewLoad();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataSet31.Clear();
+            
+            if(listBox1.SelectedIndex != -1)
+            {
+                oleDbSelectCommand2.Parameters[0].Value = listBox1.SelectedValue;
+                oleDbDataAdapter2.Fill(dataSet31);
+            }
+        }
+
+        private void oleDbDataAdapter2_RowUpdated(object sender, System.Data.OleDb.OleDbRowUpdatedEventArgs e)
+        {
+
+        }
     }
 }

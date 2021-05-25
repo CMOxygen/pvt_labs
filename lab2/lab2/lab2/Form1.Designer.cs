@@ -43,9 +43,22 @@ namespace lab2
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.oleDbSelectCommand2 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection2 = new System.Data.OleDb.OleDbConnection();
+            this.oleDbDataAdapter2 = new System.Data.OleDb.OleDbDataAdapter();
+            this.surnameLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.rankLabel = new System.Windows.Forms.Label();
+            this.numberLabel = new System.Windows.Forms.Label();
+            this.surnameText = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
+            this.rankText = new System.Windows.Forms.TextBox();
+            this.numberText = new System.Windows.Forms.TextBox();
+            this.dataSet31 = new lab2.DataSet3();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).BeginInit();
             this.SuspendLayout();
             // 
             // oleDbSelectCommand1
@@ -77,13 +90,14 @@ namespace lab2
             // 
             this.listBox1.DataSource = this.dataSet11;
             this.listBox1.DisplayMember = "Table.Фамилия";
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(0, 146);
+            this.listBox1.Location = new System.Drawing.Point(12, 45);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(800, 304);
+            this.listBox1.Size = new System.Drawing.Size(390, 404);
             this.listBox1.TabIndex = 0;
+            this.listBox1.ValueMember = "Table.Должность";
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // dataSet11BindingSource
             // 
@@ -98,7 +112,7 @@ namespace lab2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 19);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 1;
@@ -107,15 +121,16 @@ namespace lab2
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 19);
+            this.textBox1.Location = new System.Drawing.Point(137, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(339, 26);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "С";
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(604, 28);
+            this.button1.Location = new System.Drawing.Point(511, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -123,11 +138,116 @@ namespace lab2
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // oleDbSelectCommand2
+            // 
+            this.oleDbSelectCommand2.CommandText = resources.GetString("oleDbSelectCommand2.CommandText");
+            this.oleDbSelectCommand2.Connection = this.oleDbConnection2;
+            this.oleDbSelectCommand2.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
+            new System.Data.OleDb.OleDbParameter("Фамилия", System.Data.OleDb.OleDbType.WChar, 255, "Фамилия")});
+            // 
+            // oleDbConnection2
+            // 
+            this.oleDbConnection2.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database1.mdb;Persis" +
+    "t Security Info=True";
+            // 
+            // oleDbDataAdapter2
+            // 
+            this.oleDbDataAdapter2.SelectCommand = this.oleDbSelectCommand2;
+            this.oleDbDataAdapter2.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+            new System.Data.Common.DataTableMapping("Table", "Table", new System.Data.Common.DataColumnMapping[] {
+                        new System.Data.Common.DataColumnMapping("Код", "Код"),
+                        new System.Data.Common.DataColumnMapping("Фамилия", "Фамилия"),
+                        new System.Data.Common.DataColumnMapping("Должность", "Должность"),
+                        new System.Data.Common.DataColumnMapping("Оружие", "Оружие")})});
+            this.oleDbDataAdapter2.RowUpdated += new System.Data.OleDb.OleDbRowUpdatedEventHandler(this.oleDbDataAdapter2_RowUpdated);
+            // 
+            // surnameLabel
+            // 
+            this.surnameLabel.AutoSize = true;
+            this.surnameLabel.Location = new System.Drawing.Point(468, 54);
+            this.surnameLabel.Name = "surnameLabel";
+            this.surnameLabel.Size = new System.Drawing.Size(81, 20);
+            this.surnameLabel.TabIndex = 4;
+            this.surnameLabel.Text = "Фамилия";
+            this.surnameLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(468, 90);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(40, 20);
+            this.nameLabel.TabIndex = 4;
+            this.nameLabel.Text = "Имя";
+            this.nameLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // rankLabel
+            // 
+            this.rankLabel.AutoSize = true;
+            this.rankLabel.Location = new System.Drawing.Point(468, 122);
+            this.rankLabel.Name = "rankLabel";
+            this.rankLabel.Size = new System.Drawing.Size(95, 20);
+            this.rankLabel.TabIndex = 4;
+            this.rankLabel.Text = "Должность";
+            this.rankLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // numberLabel
+            // 
+            this.numberLabel.AutoSize = true;
+            this.numberLabel.Location = new System.Drawing.Point(468, 154);
+            this.numberLabel.Name = "numberLabel";
+            this.numberLabel.Size = new System.Drawing.Size(119, 20);
+            this.numberLabel.TabIndex = 4;
+            this.numberLabel.Text = "Личный номер";
+            this.numberLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // surnameText
+            // 
+            this.surnameText.Location = new System.Drawing.Point(604, 48);
+            this.surnameText.Name = "surnameText";
+            this.surnameText.Size = new System.Drawing.Size(168, 26);
+            this.surnameText.TabIndex = 5;
+            // 
+            // nameText
+            // 
+            this.nameText.Location = new System.Drawing.Point(604, 87);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(168, 26);
+            this.nameText.TabIndex = 5;
+            // 
+            // rankText
+            // 
+            this.rankText.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSet31, "Table.Должность", true));
+            this.rankText.Location = new System.Drawing.Point(604, 122);
+            this.rankText.Name = "rankText";
+            this.rankText.Size = new System.Drawing.Size(168, 26);
+            this.rankText.TabIndex = 5;
+            // 
+            // numberText
+            // 
+            this.numberText.Location = new System.Drawing.Point(604, 154);
+            this.numberText.Name = "numberText";
+            this.numberText.Size = new System.Drawing.Size(168, 26);
+            this.numberText.TabIndex = 5;
+            // 
+            // dataSet31
+            // 
+            this.dataSet31.DataSetName = "DataSet3";
+            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numberText);
+            this.Controls.Add(this.rankText);
+            this.Controls.Add(this.nameText);
+            this.Controls.Add(this.surnameText);
+            this.Controls.Add(this.numberLabel);
+            this.Controls.Add(this.rankLabel);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.surnameLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -138,6 +258,7 @@ namespace lab2
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +276,18 @@ namespace lab2
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Data.OleDb.OleDbCommand oleDbSelectCommand2;
+        private System.Data.OleDb.OleDbConnection oleDbConnection2;
+        private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter2;
+        private System.Windows.Forms.Label surnameLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label rankLabel;
+        private System.Windows.Forms.Label numberLabel;
+        private System.Windows.Forms.TextBox surnameText;
+        private System.Windows.Forms.TextBox nameText;
+        private System.Windows.Forms.TextBox rankText;
+        private System.Windows.Forms.TextBox numberText;
+        private DataSet3 dataSet31;
     }
 }
 
