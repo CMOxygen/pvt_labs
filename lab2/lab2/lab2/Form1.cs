@@ -46,6 +46,11 @@ namespace lab2
             textBox1.Text = text;
 
             oleDbSelectCommand1.Parameters[0].Value = text;
+
+            dataSet11.Clear();
+            oleDbDataAdapter1.Fill(dataSet11);
+
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
     }
 }
