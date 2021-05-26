@@ -31,22 +31,22 @@ namespace lab2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.oleDbInsertCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDataAdapter1 = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.dataSet11 = new lab2.DataSet1();
             this.listBox = new System.Windows.Forms.ListBox();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchText = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.oleDbSelectCommand2 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection2 = new System.Data.OleDb.OleDbConnection();
             this.oleDbInsertCommand2 = new System.Data.OleDb.OleDbCommand();
             this.oleDbUpdateCommand2 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand2 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDataAdapter2 = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbConnection2 = new System.Data.OleDb.OleDbConnection();
             this.dataSet21 = new lab2.DataSet2();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameText = new System.Windows.Forms.TextBox();
@@ -56,14 +56,22 @@ namespace lab2
             this.numberText = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.surnameText = new System.Windows.Forms.TextBox();
+            this.surnameLabel = new System.Windows.Forms.Label();
+            this.dataSet31 = new lab2.DataSet3();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).BeginInit();
             this.SuspendLayout();
             // 
             // oleDbSelectCommand1
             // 
             this.oleDbSelectCommand1.CommandText = "SELECT Код, Фамилия, Имя, Должность, [Личный номер]\r\nFROM   [Личный_состав]";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection1;
+            // 
+            // oleDbConnection1
+            // 
+            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database1.mdb";
             // 
             // oleDbInsertCommand1
             // 
@@ -124,10 +132,6 @@ namespace lab2
                         new System.Data.Common.DataColumnMapping("Личный номер", "Личный номер")})});
             this.oleDbDataAdapter1.UpdateCommand = this.oleDbUpdateCommand1;
             // 
-            // oleDbConnection1
-            // 
-            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database1.mdb";
-            // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
@@ -176,11 +180,16 @@ namespace lab2
             // 
             // oleDbSelectCommand2
             // 
-            this.oleDbSelectCommand2.CommandText = "SELECT [Личный_состав].*, Код AS Expr1, Фамилия AS Expr2, Имя AS Expr3, Должность" +
-    " AS Expr4, [Личный номер] AS Expr5\r\nFROM   [Личный_состав]\r\nWHERE (Фамилия = ?)";
+            this.oleDbSelectCommand2.CommandText = "SELECT Код, Фамилия, Имя, Должность, [Личный номер], Код AS Expr1, Фамилия AS Exp" +
+    "r2, Имя AS Expr3, Должность AS Expr4, [Личный номер] AS Expr5\r\nFROM   [Личный_со" +
+    "став]\r\nWHERE (Фамилия = ?)";
             this.oleDbSelectCommand2.Connection = this.oleDbConnection2;
             this.oleDbSelectCommand2.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
             new System.Data.OleDb.OleDbParameter("Фамилия", System.Data.OleDb.OleDbType.WChar, 255, "Фамилия")});
+            // 
+            // oleDbConnection2
+            // 
+            this.oleDbConnection2.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database1.mdb";
             // 
             // oleDbInsertCommand2
             // 
@@ -274,10 +283,6 @@ namespace lab2
                         new System.Data.Common.DataColumnMapping("Expr5", "Expr5")})});
             this.oleDbDataAdapter2.UpdateCommand = this.oleDbUpdateCommand2;
             // 
-            // oleDbConnection2
-            // 
-            this.oleDbConnection2.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database1.mdb";
-            // 
             // dataSet21
             // 
             this.dataSet21.DataSetName = "DataSet2";
@@ -356,11 +361,35 @@ namespace lab2
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // surnameText
+            // 
+            this.surnameText.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSet21, "Личный_состав.Expr2", true));
+            this.surnameText.Location = new System.Drawing.Point(582, 38);
+            this.surnameText.Name = "surnameText";
+            this.surnameText.Size = new System.Drawing.Size(167, 26);
+            this.surnameText.TabIndex = 6;
+            // 
+            // surnameLabel
+            // 
+            this.surnameLabel.AutoSize = true;
+            this.surnameLabel.Location = new System.Drawing.Point(485, 44);
+            this.surnameLabel.Name = "surnameLabel";
+            this.surnameLabel.Size = new System.Drawing.Size(81, 20);
+            this.surnameLabel.TabIndex = 7;
+            this.surnameLabel.Text = "Фамилия";
+            // 
+            // dataSet31
+            // 
+            this.dataSet31.DataSetName = "DataSet3";
+            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.surnameLabel);
+            this.Controls.Add(this.surnameText);
             this.Controls.Add(this.numberText);
             this.Controls.Add(this.rankText);
             this.Controls.Add(this.nameText);
@@ -378,6 +407,7 @@ namespace lab2
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +441,9 @@ namespace lab2
         private System.Windows.Forms.TextBox numberText;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox surnameText;
+        private System.Windows.Forms.Label surnameLabel;
+        private DataSet3 dataSet31;
     }
 }
 

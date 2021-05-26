@@ -23,7 +23,7 @@ namespace lab2
                 + "WHERE (Личный_состав.Фамилия LIKE ? + '%')";
 
             oleDbSelectCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter());
-            oleDbSelectCommand1.Parameters[0].Value = "В";
+            oleDbSelectCommand1.Parameters[0].Value = "";
 
             oleDbDataAdapter1.Fill(dataSet11);
             listBox.SelectedIndex = listBox.Items.Count - 1;
