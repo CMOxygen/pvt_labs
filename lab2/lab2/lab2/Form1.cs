@@ -79,5 +79,31 @@ namespace lab2
         {
 
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveRecord();
+        }
+
+        private void SaveRecord()
+        {
+            this.BindingContext[dataSet41, "Личный_состав"].EndCurrentEdit();
+
+            oleDbDataAdapter2.Update(dataSet41, "Личный_состав");
+
+            int index = listBox1.SelectedIndex;
+
+            NewLoad();
+
+            int count = listBox1.Items.Count - 1;
+
+            index = index < count ? index : count;
+            listBox1.SelectedIndex = index;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[dataSet41, "Личный_состав"].CancelCurrentEdit();
+        }
     }
 }

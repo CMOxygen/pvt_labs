@@ -59,6 +59,8 @@ namespace lab2
             this.numberText = new System.Windows.Forms.TextBox();
             this.oleDbInsertCommand = new System.Data.OleDb.OleDbCommand();
             this.dataSet41 = new lab2.DataSet4();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11BindingSource1)).BeginInit();
@@ -68,7 +70,8 @@ namespace lab2
             // 
             // oleDbSelectCommand1
             // 
-            this.oleDbSelectCommand1.CommandText = resources.GetString("oleDbSelectCommand1.CommandText");
+            this.oleDbSelectCommand1.CommandText = "SELECT Личный_состав.Код, Личный_состав.Фамилия, Личный_состав.Имя, Личный_состав" +
+    ".Должность, Личный_состав.[Личный номер]\r\nFROM   [Личный_состав]";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection1;
             // 
             // oleDbConnection1
@@ -80,11 +83,12 @@ namespace lab2
             // 
             this.oleDbDataAdapter1.SelectCommand = this.oleDbSelectCommand1;
             this.oleDbDataAdapter1.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
-            new System.Data.Common.DataTableMapping("Table", "Table", new System.Data.Common.DataColumnMapping[] {
+            new System.Data.Common.DataTableMapping("Table", "Личный_состав", new System.Data.Common.DataColumnMapping[] {
                         new System.Data.Common.DataColumnMapping("Код", "Код"),
                         new System.Data.Common.DataColumnMapping("Фамилия", "Фамилия"),
+                        new System.Data.Common.DataColumnMapping("Имя", "Имя"),
                         new System.Data.Common.DataColumnMapping("Должность", "Должность"),
-                        new System.Data.Common.DataColumnMapping("Оружие", "Оружие")})});
+                        new System.Data.Common.DataColumnMapping("Личный номер", "Личный номер")})});
             // 
             // dataSet11
             // 
@@ -135,9 +139,9 @@ namespace lab2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(511, 12);
+            this.button1.Location = new System.Drawing.Point(497, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 39);
             this.button1.TabIndex = 3;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -276,7 +280,6 @@ namespace lab2
             // 
             // surnameText
             // 
-            this.surnameText.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSet41, "Личный_состав.Фамилия", true));
             this.surnameText.Location = new System.Drawing.Point(604, 48);
             this.surnameText.Name = "surnameText";
             this.surnameText.Size = new System.Drawing.Size(168, 26);
@@ -331,6 +334,26 @@ namespace lab2
             this.dataSet41.DataSetName = "DataSet4";
             this.dataSet41.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(555, 216);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 38);
+            this.saveButton.TabIndex = 3;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(662, 216);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 38);
+            this.cancelButton.TabIndex = 3;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -344,6 +367,8 @@ namespace lab2
             this.Controls.Add(this.rankLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.surnameLabel);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -389,6 +414,8 @@ namespace lab2
         private System.Data.OleDb.OleDbCommand oleDbUpdateCommand;
         private System.Data.OleDb.OleDbCommand oleDbInsertCommand;
         private DataSet4 dataSet41;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
 
