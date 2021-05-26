@@ -66,12 +66,12 @@ namespace lab2
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataSet31.Clear();
+            dataSet41.Clear();
             
             if(listBox1.SelectedIndex != -1)
             {
                 oleDbSelectCommand2.Parameters[0].Value = listBox1.SelectedValue;
-                oleDbDataAdapter2.Fill(dataSet31);
+                oleDbDataAdapter2.Fill(dataSet41);
             }
         }
 
