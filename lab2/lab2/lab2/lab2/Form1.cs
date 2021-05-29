@@ -82,9 +82,29 @@ namespace lab2
             NewLoad();
 
             int count = listBox.Items.Count - 1;
-
             index = index < count ? index : count;
             listBox.SelectedIndex = index;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[dataSet31, "Личный_состав"].CancelCurrentEdit();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[dataSet31, "Личный_состав"].AddNew();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (listBox.Items.Count <= 0)
+                return;
+
+            int index = this.BindingContext[dataSet31, "Личный_состав"].Position;
+            this.BindingContext[dataSet31, "Личный_состав"].RemoveAt(index);
+
+            SaveRecord();
         }
     }
 }
