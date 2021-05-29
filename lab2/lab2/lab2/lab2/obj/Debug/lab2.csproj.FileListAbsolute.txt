@@ -1,0 +1,11 @@
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\bin\Debug\Database1.accdb
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\bin\Debug\lab2.exe.config
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\bin\Debug\lab2.exe
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\bin\Debug\lab2.pdb
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.csprojAssemblyReference.cache
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.Form1.resources
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.Properties.Resources.resources
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.csproj.GenerateResource.cache
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.csproj.CoreCompileInputs.cache
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.exe
+D:\work\_dev\C_Sharp\lab2\lab2\lab2\lab2\obj\Debug\lab2.pdb
