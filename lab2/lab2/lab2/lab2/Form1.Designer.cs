@@ -54,11 +54,13 @@ namespace lab2
             this.rankLabel = new System.Windows.Forms.Label();
             this.numberLabel = new System.Windows.Forms.Label();
             this.idText = new System.Windows.Forms.TextBox();
+            this.dataSet31 = new lab2.DataSet3();
             this.surnameText = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.tankText = new System.Windows.Forms.TextBox();
             this.numberText = new System.Windows.Forms.TextBox();
-            this.dataSet31 = new lab2.DataSet3();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).BeginInit();
@@ -290,6 +292,11 @@ namespace lab2
             this.idText.Size = new System.Drawing.Size(174, 26);
             this.idText.TabIndex = 5;
             // 
+            // dataSet31
+            // 
+            this.dataSet31.DataSetName = "DataSet3";
+            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // surnameText
             // 
             this.surnameText.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSet31, "Личный_состав.Фамилия", true));
@@ -322,16 +329,32 @@ namespace lab2
             this.numberText.Size = new System.Drawing.Size(174, 26);
             this.numberText.TabIndex = 5;
             // 
-            // dataSet31
+            // saveButton
             // 
-            this.dataSet31.DataSetName = "DataSet3";
-            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.saveButton.Location = new System.Drawing.Point(512, 259);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 32);
+            this.saveButton.TabIndex = 6;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(678, 259);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 32);
+            this.cancelButton.TabIndex = 7;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.numberText);
             this.Controls.Add(this.tankText);
             this.Controls.Add(this.nameBox);
@@ -388,6 +411,8 @@ namespace lab2
         private System.Windows.Forms.TextBox tankText;
         private System.Windows.Forms.TextBox numberText;
         private DataSet3 dataSet31;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
 
