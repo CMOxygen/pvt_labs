@@ -53,8 +53,14 @@ namespace lab3
             this.dataSet11 = new lab3.DataSet1();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.oleDbConnection2 = new System.Data.OleDb.OleDbConnection();
+            this.dataSet21 = new lab3.DataSet2();
+            this.labelID = new System.Windows.Forms.Label();
+            this.dataSet31 = new lab3.DataSet3();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -90,6 +96,7 @@ namespace lab3
             // labelHotelName
             // 
             this.labelHotelName.AutoSize = true;
+            this.labelHotelName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSet31, "Hotel_List.Hotel_Name", true));
             this.labelHotelName.Location = new System.Drawing.Point(158, 122);
             this.labelHotelName.Name = "labelHotelName";
             this.labelHotelName.Size = new System.Drawing.Size(89, 20);
@@ -124,7 +131,7 @@ namespace lab3
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 38);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -134,7 +141,7 @@ namespace lab3
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // listHotel
@@ -147,6 +154,7 @@ namespace lab3
             this.listHotel.Name = "listHotel";
             this.listHotel.Size = new System.Drawing.Size(360, 164);
             this.listHotel.TabIndex = 5;
+            this.listHotel.ValueMember = "Hotel_List.Hotel_ID";
             this.listHotel.SelectedIndexChanged += new System.EventHandler(this.listHotel_SelectedIndexChanged);
             // 
             // oleDbSelectCommand1
@@ -198,11 +206,68 @@ namespace lab3
                         new System.Data.Common.DataColumnMapping("Hotel_Name", "Hotel_Name")})});
             this.oleDbDataAdapter1.UpdateCommand = this.oleDbUpdateCommand1;
             // 
+            // oleDbSelectCommand2
+            // 
+            this.oleDbSelectCommand2.CommandText = "SELECT Hotel_ID, City, Hotel_Name, Number_Of_Rooms, Rating\r\nFROM Hotel_List";
+            this.oleDbSelectCommand2.Connection = this.oleDbConnection2;
+            // 
+            // oleDbInsertCommand2
+            // 
+            this.oleDbInsertCommand2.CommandText = "INSERT INTO `Hotel_List` (`City`, `Hotel_Name`, `Number_Of_Rooms`, `Rating`) VALU" +
+    "ES (?, ?, ?, ?)";
+            this.oleDbInsertCommand2.Connection = this.oleDbConnection2;
+            this.oleDbInsertCommand2.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
+            new System.Data.OleDb.OleDbParameter("City", System.Data.OleDb.OleDbType.VarWChar, 0, "City"),
+            new System.Data.OleDb.OleDbParameter("Hotel_Name", System.Data.OleDb.OleDbType.VarWChar, 0, "Hotel_Name"),
+            new System.Data.OleDb.OleDbParameter("Number_Of_Rooms", System.Data.OleDb.OleDbType.Integer, 0, "Number_Of_Rooms"),
+            new System.Data.OleDb.OleDbParameter("Rating", System.Data.OleDb.OleDbType.VarWChar, 0, "Rating")});
+            // 
+            // oleDbUpdateCommand2
+            // 
+            this.oleDbUpdateCommand2.CommandText = resources.GetString("oleDbUpdateCommand2.CommandText");
+            this.oleDbUpdateCommand2.Connection = this.oleDbConnection2;
+            this.oleDbUpdateCommand2.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
+            new System.Data.OleDb.OleDbParameter("City", System.Data.OleDb.OleDbType.VarWChar, 0, "City"),
+            new System.Data.OleDb.OleDbParameter("Hotel_Name", System.Data.OleDb.OleDbType.VarWChar, 0, "Hotel_Name"),
+            new System.Data.OleDb.OleDbParameter("Number_Of_Rooms", System.Data.OleDb.OleDbType.Integer, 0, "Number_Of_Rooms"),
+            new System.Data.OleDb.OleDbParameter("Rating", System.Data.OleDb.OleDbType.VarWChar, 0, "Rating"),
+            new System.Data.OleDb.OleDbParameter("Original_Hotel_ID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Hotel_ID", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_City", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "City", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_City", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "City", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_Hotel_Name", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hotel_Name", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_Hotel_Name", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Hotel_Name", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_Number_Of_Rooms", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Number_Of_Rooms", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_Number_Of_Rooms", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Number_Of_Rooms", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_Rating", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Rating", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_Rating", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Rating", System.Data.DataRowVersion.Original, null)});
+            // 
+            // oleDbDeleteCommand2
+            // 
+            this.oleDbDeleteCommand2.CommandText = resources.GetString("oleDbDeleteCommand2.CommandText");
+            this.oleDbDeleteCommand2.Connection = this.oleDbConnection2;
+            this.oleDbDeleteCommand2.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
+            new System.Data.OleDb.OleDbParameter("Original_Hotel_ID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Hotel_ID", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_City", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "City", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_City", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "City", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_Hotel_Name", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hotel_Name", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_Hotel_Name", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Hotel_Name", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_Number_Of_Rooms", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Number_Of_Rooms", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_Number_Of_Rooms", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Number_Of_Rooms", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("IsNull_Rating", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Rating", System.Data.DataRowVersion.Original, true, null),
+            new System.Data.OleDb.OleDbParameter("Original_Rating", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Rating", System.Data.DataRowVersion.Original, null)});
+            // 
             // oleDbDataAdapter2
             // 
             this.oleDbDataAdapter2.DeleteCommand = this.oleDbDeleteCommand2;
             this.oleDbDataAdapter2.InsertCommand = this.oleDbInsertCommand2;
             this.oleDbDataAdapter2.SelectCommand = this.oleDbSelectCommand2;
+            this.oleDbDataAdapter2.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+            new System.Data.Common.DataTableMapping("Table", "Hotel_List", new System.Data.Common.DataColumnMapping[] {
+                        new System.Data.Common.DataColumnMapping("Hotel_ID", "Hotel_ID"),
+                        new System.Data.Common.DataColumnMapping("City", "City"),
+                        new System.Data.Common.DataColumnMapping("Hotel_Name", "Hotel_Name"),
+                        new System.Data.Common.DataColumnMapping("Number_Of_Rooms", "Number_Of_Rooms"),
+                        new System.Data.Common.DataColumnMapping("Rating", "Rating")})});
             this.oleDbDataAdapter2.UpdateCommand = this.oleDbUpdateCommand2;
             // 
             // dataSet11
@@ -228,6 +293,31 @@ namespace lab3
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // oleDbConnection2
+            // 
+            this.oleDbConnection2.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\lab3_database.accdb" +
+    "";
+            // 
+            // dataSet21
+            // 
+            this.dataSet21.DataSetName = "DataSet2";
+            this.dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(158, 45);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(26, 20);
+            this.labelID.TabIndex = 3;
+            this.labelID.Text = "ID";
+            this.labelID.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // dataSet31
+            // 
+            this.dataSet31.DataSetName = "DataSet3";
+            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -239,6 +329,7 @@ namespace lab3
             this.Controls.Add(this.labelRating);
             this.Controls.Add(this.labelRoomsNumber);
             this.Controls.Add(this.labelHotelName);
+            this.Controls.Add(this.labelID);
             this.Controls.Add(this.labelCity);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSearch);
@@ -249,6 +340,8 @@ namespace lab3
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,6 +372,10 @@ namespace lab3
         private DataSet1 dataSet11;
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Data.OleDb.OleDbConnection oleDbConnection2;
+        private DataSet2 dataSet21;
+        private System.Windows.Forms.Label labelID;
+        private DataSet3 dataSet31;
     }
 }
 

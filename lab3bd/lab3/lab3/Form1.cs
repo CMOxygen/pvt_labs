@@ -67,22 +67,22 @@ namespace lab3
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            addHotelDialog dlg = new addHotelDialog();
-            dlg.ShowDialog();
+            //addHotelDialog dlg = new addHotelDialog();
+            //dlg.ShowDialog();
 
-            if (dlg.HotelName != "")
-            {
-                labelCity.Text = dlg.City;
-                labelHotelName.Text = dlg.HotelName;
-                labelRating.Text = dlg.Rate.ToString();
-                labelRoomsNumber.Text = dlg.Rooms.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Введите данные", "Hotel Broker Administration", MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
-                return;
-            } 
+            //if (dlg.HotelName != "")
+            //{
+            //    labelCity.Text = dlg.City;
+            //    labelHotelName.Text = dlg.HotelName;
+            //    labelRating.Text = dlg.Rate.ToString();
+            //    labelRoomsNumber.Text = dlg.Rooms.ToString();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Введите данные", "Hotel Broker Administration", MessageBoxButtons.OK,
+            //    MessageBoxIcon.Exclamation);
+            //    return;
+            //} 
             
             
             //String s = dlg.City + "," + dlg.HotelName + ","
@@ -108,6 +108,13 @@ namespace lab3
 
         private void listHotel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataSet31.Clear();
+
+            if (listHotel.SelectedIndex > -1)
+            {
+                oleDbSelectCommand2.Parameters[0].Value = listHotel.SelectedValue;
+                oleDbDataAdapter2.Fill(dataSet31);
+            }
             //if (listHotel.SelectedIndex != -1)
             //{
             //    String selected = listHotel.SelectedItem.ToString();
