@@ -44,7 +44,6 @@ namespace lab2
             this.oleDbDataAdapter2 = new System.Data.OleDb.OleDbDataAdapter();
             this.dataSet11 = new lab2.DataSet1();
             this.listBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.searchText = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.dataSet21 = new lab2.DataSet2();
@@ -204,15 +203,6 @@ namespace lab2
             this.listBox.TabIndex = 0;
             this.listBox.ValueMember = "Личный_состав.Код";
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
             // 
             // searchText
             // 
@@ -392,7 +382,6 @@ namespace lab2
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchText);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -420,7 +409,6 @@ namespace lab2
         private System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter2;
         private DataSet1 dataSet11;
         private System.Windows.Forms.ListBox listBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.Button searchButton;
         private System.Data.OleDb.OleDbConnection oleDbConnection2;
