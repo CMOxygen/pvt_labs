@@ -38,6 +38,7 @@ namespace lab3
             this.labelRating = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.listHotel = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,11 +122,22 @@ namespace lab3
             this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
+            // listHotel
+            // 
+            this.listHotel.FormattingEnabled = true;
+            this.listHotel.ItemHeight = 20;
+            this.listHotel.Location = new System.Drawing.Point(358, 78);
+            this.listHotel.Name = "listHotel";
+            this.listHotel.Size = new System.Drawing.Size(215, 164);
+            this.listHotel.TabIndex = 5;
+            this.listHotel.SelectedIndexChanged += new System.EventHandler(this.listHotel_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listHotel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.labelRating);
             this.Controls.Add(this.labelRoomsNumber);
@@ -153,6 +165,7 @@ namespace lab3
         private System.Windows.Forms.Label labelRating;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ListBox listHotel;
     }
 }
 
