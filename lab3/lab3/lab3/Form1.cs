@@ -33,6 +33,19 @@ namespace lab3
         {
             addHotelDialog dlg = new addHotelDialog();
             dlg.ShowDialog();
+            if (dlg.HotelName != "")
+            {
+                labelCity.Text = dlg.City;
+                labelHotelName.Text = dlg.HotelName;
+                labelRoomsNumber.Text = dlg.Rooms.ToString();
+                labelRating.Text = dlg.Rate.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Введите данные", "Hotel Broker Administration", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -42,5 +55,10 @@ namespace lab3
                 Application.Exit();
             }
         }
-      }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
