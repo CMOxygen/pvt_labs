@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace lab4
 {
@@ -15,6 +16,7 @@ namespace lab4
         public mainForm()
         {
             InitializeComponent();
+            menuSave.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -93,5 +95,47 @@ namespace lab4
             Blank frm = (Blank)(this.ActiveMdiChild);
             frm.Delete();
         }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Text Files (*.txt)|*.txt|All Files(*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Blank frm = new Blank();
+                frm.Open(openFileDialog1.FileName);
+
+                frm.MdiParent = this;
+                frm.DocName = openFileDialog1.FileName;
+                frm.Text = frm.DocName;
+                frm.Show();
+                frm.isSaved = true;        
+            }
+            menuSave.Enabled = true;
+        }
+
+        private void menuSave_Click(object sender, EventArgs e)
+        {
+            Blank frm = (Blank)(this.ActiveMdiChild);
+            frm.Save(frm.DocName);
+        }
+
+        private void menuSaveAs_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "Text Files (*.txt)|*.txt|AllFiles(*.*) | *.* ";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Blank frm = (Blank)(this.ActiveMdiChild);
+                frm.Save(saveFileDialog1.FileName);
+
+                frm.MdiParent = this;
+                frm.DocName = saveFileDialog1.FileName;
+                frm.Text = frm.DocName;
+                frm.isSaved = true;
+            }
+
+            menuSave.Enabled = true;
+        }
     }
 }
+
