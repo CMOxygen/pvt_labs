@@ -1,0 +1,10 @@
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\bin\Debug\lab4sdi.exe.config
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\bin\Debug\lab4sdi.exe
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\bin\Debug\lab4sdi.pdb
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.csprojAssemblyReference.cache
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.Form1.resources
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.Properties.Resources.resources
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.csproj.GenerateResource.cache
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.csproj.CoreCompileInputs.cache
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.exe
+D:\_work\_dev\c_sharp\lab4\sdi\lab4sdi\lab4sdi\obj\Debug\lab4sdi.pdb
