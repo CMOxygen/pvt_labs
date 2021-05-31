@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace lab3 {
+namespace lab2 {
     
     
     /// <summary>
@@ -24,7 +24,7 @@ namespace lab3 {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet2 : global::System.Data.DataSet {
         
-        private Hotel_ListDataTable tableHotel_List;
+        private Личный_составDataTable tableЛичный_состав;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace lab3 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Hotel_List"] != null)) {
-                    base.Tables.Add(new Hotel_ListDataTable(ds.Tables["Hotel_List"]));
+                if ((ds.Tables["Личный_состав"] != null)) {
+                    base.Tables.Add(new Личный_составDataTable(ds.Tables["Личный_состав"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace lab3 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Hotel_ListDataTable Hotel_List {
+        public Личный_составDataTable Личный_состав {
             get {
-                return this.tableHotel_List;
+                return this.tableЛичный_состав;
             }
         }
         
@@ -152,8 +152,8 @@ namespace lab3 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Hotel_List"] != null)) {
-                    base.Tables.Add(new Hotel_ListDataTable(ds.Tables["Hotel_List"]));
+                if ((ds.Tables["Личный_состав"] != null)) {
+                    base.Tables.Add(new Личный_составDataTable(ds.Tables["Личный_состав"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace lab3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableHotel_List = ((Hotel_ListDataTable)(base.Tables["Hotel_List"]));
+            this.tableЛичный_состав = ((Личный_составDataTable)(base.Tables["Личный_состав"]));
             if ((initTable == true)) {
-                if ((this.tableHotel_List != null)) {
-                    this.tableHotel_List.InitVars();
+                if ((this.tableЛичный_состав != null)) {
+                    this.tableЛичный_состав.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace lab3 {
             this.Namespace = "http://tempuri.org/DataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableHotel_List = new Hotel_ListDataTable();
-            base.Tables.Add(this.tableHotel_List);
+            this.tableЛичный_состав = new Личный_составDataTable();
+            base.Tables.Add(this.tableЛичный_состав);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeHotel_List() {
+        private bool ShouldSerializeЛичный_состав() {
             return false;
         }
         
@@ -270,27 +270,29 @@ namespace lab3 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void Hotel_ListRowChangeEventHandler(object sender, Hotel_ListRowChangeEvent e);
+        public delegate void Личный_составRowChangeEventHandler(object sender, Личный_составRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Hotel_ListDataTable : global::System.Data.TypedTableBase<Hotel_ListRow> {
+        public partial class Личный_составDataTable : global::System.Data.TypedTableBase<Личный_составRow> {
             
-            private global::System.Data.DataColumn columnHotel_ID;
+            private global::System.Data.DataColumn columnКод;
             
-            private global::System.Data.DataColumn columnHotel_Name;
+            private global::System.Data.DataColumn columnФамилия;
             
-            private global::System.Data.DataColumn columnNumber_Of_Rooms;
+            private global::System.Data.DataColumn columnИмя;
             
-            private global::System.Data.DataColumn columnRating;
+            private global::System.Data.DataColumn columnДолжность;
+            
+            private global::System.Data.DataColumn columnЛичный_номер;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListDataTable() {
-                this.TableName = "Hotel_List";
+            public Личный_составDataTable() {
+                this.TableName = "Личный_состав";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +300,7 @@ namespace lab3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal Hotel_ListDataTable(global::System.Data.DataTable table) {
+            internal Личный_составDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +317,48 @@ namespace lab3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected Hotel_ListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Личный_составDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Hotel_IDColumn {
+            public global::System.Data.DataColumn КодColumn {
                 get {
-                    return this.columnHotel_ID;
+                    return this.columnКод;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Hotel_NameColumn {
+            public global::System.Data.DataColumn ФамилияColumn {
                 get {
-                    return this.columnHotel_Name;
+                    return this.columnФамилия;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Number_Of_RoomsColumn {
+            public global::System.Data.DataColumn ИмяColumn {
                 get {
-                    return this.columnNumber_Of_Rooms;
+                    return this.columnИмя;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RatingColumn {
+            public global::System.Data.DataColumn ДолжностьColumn {
                 get {
-                    return this.columnRating;
+                    return this.columnДолжность;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Личный_номерColumn {
+                get {
+                    return this.columnЛичный_номер;
                 }
             }
             
@@ -363,55 +373,56 @@ namespace lab3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListRow this[int index] {
+            public Личный_составRow this[int index] {
                 get {
-                    return ((Hotel_ListRow)(this.Rows[index]));
+                    return ((Личный_составRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Hotel_ListRowChangeEventHandler Hotel_ListRowChanging;
+            public event Личный_составRowChangeEventHandler Личный_составRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Hotel_ListRowChangeEventHandler Hotel_ListRowChanged;
+            public event Личный_составRowChangeEventHandler Личный_составRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Hotel_ListRowChangeEventHandler Hotel_ListRowDeleting;
+            public event Личный_составRowChangeEventHandler Личный_составRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Hotel_ListRowChangeEventHandler Hotel_ListRowDeleted;
+            public event Личный_составRowChangeEventHandler Личный_составRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddHotel_ListRow(Hotel_ListRow row) {
+            public void AddЛичный_составRow(Личный_составRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListRow AddHotel_ListRow(string Hotel_Name, int Number_Of_Rooms, string Rating) {
-                Hotel_ListRow rowHotel_ListRow = ((Hotel_ListRow)(this.NewRow()));
+            public Личный_составRow AddЛичный_составRow(string Фамилия, string Имя, string Должность, object Личный_номер) {
+                Личный_составRow rowЛичный_составRow = ((Личный_составRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Hotel_Name,
-                        Number_Of_Rooms,
-                        Rating};
-                rowHotel_ListRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHotel_ListRow);
-                return rowHotel_ListRow;
+                        Фамилия,
+                        Имя,
+                        Должность,
+                        Личный_номер};
+                rowЛичный_составRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowЛичный_составRow);
+                return rowЛичный_составRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListRow FindByHotel_ID(int Hotel_ID) {
-                return ((Hotel_ListRow)(this.Rows.Find(new object[] {
-                            Hotel_ID})));
+            public Личный_составRow FindByКод(int Код) {
+                return ((Личный_составRow)(this.Rows.Find(new object[] {
+                            Код})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Hotel_ListDataTable cln = ((Hotel_ListDataTable)(base.Clone()));
+                Личный_составDataTable cln = ((Личный_составDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,62 +430,67 @@ namespace lab3 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Hotel_ListDataTable();
+                return new Личный_составDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnHotel_ID = base.Columns["Hotel_ID"];
-                this.columnHotel_Name = base.Columns["Hotel_Name"];
-                this.columnNumber_Of_Rooms = base.Columns["Number_Of_Rooms"];
-                this.columnRating = base.Columns["Rating"];
+                this.columnКод = base.Columns["Код"];
+                this.columnФамилия = base.Columns["Фамилия"];
+                this.columnИмя = base.Columns["Имя"];
+                this.columnДолжность = base.Columns["Должность"];
+                this.columnЛичный_номер = base.Columns["Личный_номер"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnHotel_ID = new global::System.Data.DataColumn("Hotel_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHotel_ID);
-                this.columnHotel_Name = new global::System.Data.DataColumn("Hotel_Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHotel_Name);
-                this.columnNumber_Of_Rooms = new global::System.Data.DataColumn("Number_Of_Rooms", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumber_Of_Rooms);
-                this.columnRating = new global::System.Data.DataColumn("Rating", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRating);
+                this.columnКод = new global::System.Data.DataColumn("Код", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКод);
+                this.columnФамилия = new global::System.Data.DataColumn("Фамилия", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФамилия);
+                this.columnИмя = new global::System.Data.DataColumn("Имя", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnИмя);
+                this.columnДолжность = new global::System.Data.DataColumn("Должность", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДолжность);
+                this.columnЛичный_номер = new global::System.Data.DataColumn("Личный_номер", typeof(object), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЛичный_номер);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnHotel_ID}, true));
-                this.columnHotel_ID.AutoIncrement = true;
-                this.columnHotel_ID.AllowDBNull = false;
-                this.columnHotel_ID.Unique = true;
-                this.columnHotel_Name.MaxLength = 255;
-                this.columnRating.MaxLength = 255;
+                                this.columnКод}, true));
+                this.columnКод.AutoIncrement = true;
+                this.columnКод.AllowDBNull = false;
+                this.columnКод.Unique = true;
+                this.columnФамилия.MaxLength = 255;
+                this.columnИмя.MaxLength = 255;
+                this.columnДолжность.MaxLength = 255;
+                this.columnЛичный_номер.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListRow NewHotel_ListRow() {
-                return ((Hotel_ListRow)(this.NewRow()));
+            public Личный_составRow NewЛичный_составRow() {
+                return ((Личный_составRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Hotel_ListRow(builder);
+                return new Личный_составRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Hotel_ListRow);
+                return typeof(Личный_составRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Hotel_ListRowChanged != null)) {
-                    this.Hotel_ListRowChanged(this, new Hotel_ListRowChangeEvent(((Hotel_ListRow)(e.Row)), e.Action));
+                if ((this.Личный_составRowChanged != null)) {
+                    this.Личный_составRowChanged(this, new Личный_составRowChangeEvent(((Личный_составRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +498,8 @@ namespace lab3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Hotel_ListRowChanging != null)) {
-                    this.Hotel_ListRowChanging(this, new Hotel_ListRowChangeEvent(((Hotel_ListRow)(e.Row)), e.Action));
+                if ((this.Личный_составRowChanging != null)) {
+                    this.Личный_составRowChanging(this, new Личный_составRowChangeEvent(((Личный_составRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,8 +507,8 @@ namespace lab3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Hotel_ListRowDeleted != null)) {
-                    this.Hotel_ListRowDeleted(this, new Hotel_ListRowChangeEvent(((Hotel_ListRow)(e.Row)), e.Action));
+                if ((this.Личный_составRowDeleted != null)) {
+                    this.Личный_составRowDeleted(this, new Личный_составRowChangeEvent(((Личный_составRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,14 +516,14 @@ namespace lab3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Hotel_ListRowDeleting != null)) {
-                    this.Hotel_ListRowDeleting(this, new Hotel_ListRowChangeEvent(((Hotel_ListRow)(e.Row)), e.Action));
+                if ((this.Личный_составRowDeleting != null)) {
+                    this.Личный_составRowDeleting(this, new Личный_составRowChangeEvent(((Личный_составRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveHotel_ListRow(Hotel_ListRow row) {
+            public void RemoveЛичный_составRow(Личный_составRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -534,7 +550,7 @@ namespace lab3 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Hotel_ListDataTable";
+                attribute2.FixedValue = "Личный_составDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -578,110 +594,138 @@ namespace lab3 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Hotel_ListRow : global::System.Data.DataRow {
+        public partial class Личный_составRow : global::System.Data.DataRow {
             
-            private Hotel_ListDataTable tableHotel_List;
+            private Личный_составDataTable tableЛичный_состав;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal Hotel_ListRow(global::System.Data.DataRowBuilder rb) : 
+            internal Личный_составRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHotel_List = ((Hotel_ListDataTable)(this.Table));
+                this.tableЛичный_состав = ((Личный_составDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Hotel_ID {
+            public int Код {
                 get {
-                    return ((int)(this[this.tableHotel_List.Hotel_IDColumn]));
+                    return ((int)(this[this.tableЛичный_состав.КодColumn]));
                 }
                 set {
-                    this[this.tableHotel_List.Hotel_IDColumn] = value;
+                    this[this.tableЛичный_состав.КодColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Hotel_Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableHotel_List.Hotel_NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Hotel_Name\' в таблице \'Hotel_List\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHotel_List.Hotel_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Number_Of_Rooms {
+            public string Фамилия {
                 get {
                     try {
-                        return ((int)(this[this.tableHotel_List.Number_Of_RoomsColumn]));
+                        return ((string)(this[this.tableЛичный_состав.ФамилияColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Number_Of_Rooms\' в таблице \'Hotel_List\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Фамилия\' в таблице \'Личный_состав\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHotel_List.Number_Of_RoomsColumn] = value;
+                    this[this.tableЛичный_состав.ФамилияColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Rating {
+            public string Имя {
                 get {
                     try {
-                        return ((string)(this[this.tableHotel_List.RatingColumn]));
+                        return ((string)(this[this.tableЛичный_состав.ИмяColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Rating\' в таблице \'Hotel_List\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Имя\' в таблице \'Личный_состав\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHotel_List.RatingColumn] = value;
+                    this[this.tableЛичный_состав.ИмяColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsHotel_NameNull() {
-                return this.IsNull(this.tableHotel_List.Hotel_NameColumn);
+            public string Должность {
+                get {
+                    try {
+                        return ((string)(this[this.tableЛичный_состав.ДолжностьColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Должность\' в таблице \'Личный_состав\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав.ДолжностьColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetHotel_NameNull() {
-                this[this.tableHotel_List.Hotel_NameColumn] = global::System.Convert.DBNull;
+            public object Личный_номер {
+                get {
+                    try {
+                        return ((object)(this[this.tableЛичный_состав.Личный_номерColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Личный_номер\' в таблице \'Личный_состав\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав.Личный_номерColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNumber_Of_RoomsNull() {
-                return this.IsNull(this.tableHotel_List.Number_Of_RoomsColumn);
+            public bool IsФамилияNull() {
+                return this.IsNull(this.tableЛичный_состав.ФамилияColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNumber_Of_RoomsNull() {
-                this[this.tableHotel_List.Number_Of_RoomsColumn] = global::System.Convert.DBNull;
+            public void SetФамилияNull() {
+                this[this.tableЛичный_состав.ФамилияColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsRatingNull() {
-                return this.IsNull(this.tableHotel_List.RatingColumn);
+            public bool IsИмяNull() {
+                return this.IsNull(this.tableЛичный_состав.ИмяColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetRatingNull() {
-                this[this.tableHotel_List.RatingColumn] = global::System.Convert.DBNull;
+            public void SetИмяNull() {
+                this[this.tableЛичный_состав.ИмяColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsДолжностьNull() {
+                return this.IsNull(this.tableЛичный_состав.ДолжностьColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetДолжностьNull() {
+                this[this.tableЛичный_состав.ДолжностьColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsЛичный_номерNull() {
+                return this.IsNull(this.tableЛичный_состав.Личный_номерColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetЛичный_номерNull() {
+                this[this.tableЛичный_состав.Личный_номерColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -689,22 +733,22 @@ namespace lab3 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class Hotel_ListRowChangeEvent : global::System.EventArgs {
+        public class Личный_составRowChangeEvent : global::System.EventArgs {
             
-            private Hotel_ListRow eventRow;
+            private Личный_составRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListRowChangeEvent(Hotel_ListRow row, global::System.Data.DataRowAction action) {
+            public Личный_составRowChangeEvent(Личный_составRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Hotel_ListRow Row {
+            public Личный_составRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -12,11 +12,11 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Hotel_List" msprop:Generator_TableClassName="Hotel_ListDataTable" msprop:Generator_TableVarName="tableHotel_List" msprop:Generator_TablePropName="Hotel_List" msprop:Generator_RowDeletingName="Hotel_ListRowDeleting" msprop:Generator_RowChangingName="Hotel_ListRowChanging" msprop:Generator_RowEvHandlerName="Hotel_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="Hotel_ListRowDeleted" msprop:Generator_UserTableName="Hotel_List" msprop:Generator_RowChangedName="Hotel_ListRowChanged" msprop:Generator_RowEvArgName="Hotel_ListRowChangeEvent" msprop:Generator_RowClassName="Hotel_ListRow">
+        <xs:element name="Личный_состав" msprop:Generator_TableClassName="Личный_составDataTable" msprop:Generator_TableVarName="tableЛичный_состав" msprop:Generator_TablePropName="Личный_состав" msprop:Generator_RowDeletingName="Личный_составRowDeleting" msprop:Generator_RowChangingName="Личный_составRowChanging" msprop:Generator_RowEvHandlerName="Личный_составRowChangeEventHandler" msprop:Generator_RowDeletedName="Личный_составRowDeleted" msprop:Generator_UserTableName="Личный_состав" msprop:Generator_RowChangedName="Личный_составRowChanged" msprop:Generator_RowEvArgName="Личный_составRowChangeEvent" msprop:Generator_RowClassName="Личный_составRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Hotel_ID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnHotel_ID" msprop:Generator_ColumnPropNameInRow="Hotel_ID" msprop:Generator_ColumnPropNameInTable="Hotel_IDColumn" msprop:Generator_UserColumnName="Hotel_ID" type="xs:int" />
-              <xs:element name="Hotel_Name" msprop:Generator_ColumnVarNameInTable="columnHotel_Name" msprop:Generator_ColumnPropNameInRow="Hotel_Name" msprop:Generator_ColumnPropNameInTable="Hotel_NameColumn" msprop:Generator_UserColumnName="Hotel_Name" minOccurs="0">
+              <xs:element name="Код" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnКод" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_UserColumnName="Код" type="xs:int" />
+              <xs:element name="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -29,8 +29,8 @@
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Hotel_List" />
-      <xs:field xpath="mstns:Hotel_ID" />
+      <xs:selector xpath=".//mstns:Личный_состав" />
+      <xs:field xpath="mstns:Код" />
     </xs:unique>
   </xs:element>
 </xs:schema>

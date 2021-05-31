@@ -8,54 +8,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lab3
+namespace lab2
 {
     public partial class addHotelDialog : Form
     {
-        public String City
-        {
-            get { return textCity.Text; }
-            set { textCity.Text = value; }
-        }
-        public String HotelName
-        {
-            get { return (textHotelName.Text); }
-            set { textHotelName.Text = value; }
-        }
-
-        public int Rooms
-        {
-            get { return Convert.ToInt32(textRoomsNumber.Text); }
-            set { textRoomsNumber.Text = value.ToString(); }
-        }
-        public double Rate
-        {
-            get { return Convert.ToDouble(textRating.Text); }
-            set { textRating.Text = value.ToString(); }
-        }
-
-        private void cmdOk_Click(object sender, EventArgs e)
-        { 
-            Close();
-        }
         public addHotelDialog()
         {
             InitializeComponent();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        public String Surname
         {
-
+            get { return (boxSurname.Text); }
+            set { boxSurname.Text = value; }
         }
+
+        public String Name
+        {
+            get { return (boxName.Text); }
+            set { boxName.Text = value; }
+        }
+
+        public String Rank
+        {
+            get { return (boxRank.Text); }
+            set { boxRank.Text = value; }
+        }
+
+        public int Number
+        {
+            get { return Convert.ToInt32(boxNumber.Text); }
+            set { boxNumber.Text = value.ToString(); }
+        }
+        
+
+
+
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Close();   
+            Close();
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void buttonOK_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
