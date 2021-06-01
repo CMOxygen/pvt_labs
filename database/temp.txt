@@ -1,3 +1,0 @@
-SELECT [Личный_состав].*, Код AS Expr1, Фамилия AS Expr2, Имя AS Expr3, Должность AS Expr4, [Личный номер] AS Expr5
-FROM   [Личный_состав]
-WHERE (Фамилия = ?)

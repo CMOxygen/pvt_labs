@@ -1,9 +1,0 @@
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\bin\Debug\lab5.exe.config
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\bin\Debug\lab5.exe
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\bin\Debug\lab5.pdb
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\obj\Debug\lab5.csprojAssemblyReference.cache
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\obj\Debug\lab5.Properties.Resources.resources
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\obj\Debug\lab5.csproj.GenerateResource.cache
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\obj\Debug\lab5.csproj.CoreCompileInputs.cache
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\obj\Debug\lab5.exe
-D:\_work\_dev\c_sharp\lab5\lab5\lab5\obj\Debug\lab5.pdb
